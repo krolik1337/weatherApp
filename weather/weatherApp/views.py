@@ -28,7 +28,7 @@ def index(request):
                     message = 'Invalid city.'
         elif 'info' in request.POST:
             Info.objects.all().update(extended=not extended)
-
+    extended = Info.objects.first()
     for city in cities:
         city_weather = requests.get(url.format(city)).json()
         weather = {
