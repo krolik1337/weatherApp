@@ -1,0 +1,24 @@
+{% extends 'weatherApp/index.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+</br>
+<div class="container">
+    <div class="columns is-mobile">
+        <div class="column is-half is-offset-one-quarter">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+                  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+                  crossorigin="anonymous">
+            <form method="POST">
+                {% csrf_token %}
+                {{form|crispy}}
+            <p>
+                <button type="submit" class="button is-info">Login</button>
+            </p>
+            <p>Don't have an account? Create one <a href="../register">here</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
